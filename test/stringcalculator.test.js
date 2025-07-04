@@ -1,4 +1,4 @@
-const { add } = require('../src/stringcalculator');
+const { add, getCalledCount } = require('../src/stringcalculator');
 
 test('empty string returns 0', () => {
   expect(add('')).toBe(0);
@@ -30,9 +30,10 @@ test('throws error for negative numbers', () => {
 
 
 test('tracks how many times the func was calles', () => {
+  const start = getCalledCount();
   add("1,2");
-  add("3,4");
-  expect(getCalledCount()).toBe(2);
+  add("3");
+  expect(getCalledCount()).toBe(start + 2);
 });
 
 test('ignores numbers greater than 1000', () => {

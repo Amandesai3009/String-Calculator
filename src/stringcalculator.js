@@ -38,4 +38,4 @@ function getCalledCount() {
 }
 
 
-module.exports = { add };
+module.exports = { add, getCalledCount };
