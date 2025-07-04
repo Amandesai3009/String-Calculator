@@ -58,3 +58,7 @@ test('handles multiple single-char delimiters: [*] and [%]', () => {
 test('handles multiple long delimiters: [***] and [%%]', () => {
   expect(add("//[***][%%]\n1***2%%3")).toBe(6);
 });
+
+test('handles multiple delimiters of length > 1 like [**] and [%%]', () => {
+  expect(add("//[**][%%]\n1**2%%3")).toBe(6);
+});
