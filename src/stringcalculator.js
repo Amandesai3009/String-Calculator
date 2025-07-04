@@ -15,20 +15,20 @@ function add(numbers){
 
     if(numbers.startsWith("//")) {
         const parts = numbers.split("\n");
-        delimiters = new RegExp(parts[0].substring(2));
-        numbers = parts[1];
+        const delimiterSection = parts[0].substring(2);
+        numbers = parts.slice(1).join("\n");
+    
+    
+        if(delimiterSection.startsWith("[")) {
+            // Handle multiple custom delimiters
+            const matches = delimiterSection.match(/\[([^\]]+)\]/g);
+            const delimiterArray = matches.map(d => escapeRegExp(d.slice(1, -1)));
+            delimiters = new RegExp(delimiterArray.join("|"));
+        }
+        else {
+            delimiters = new RegExp(escapeRegExp(delimiterSection));
+        }
     }
-
-     if (delimiterSection.startsWith('[')) {
-      // Multiple or long delimiters: //[***][%%]
-      const delimiterMatches = delimiterSection.match(/\[([^\]]+)\]/g);
-      const delimiterList = delimiterMatches.map(d => escapeRegExp(d.slice(1, -1)));
-      delimiters = new RegExp(delimiterList.join('|'));
-    } else {
-      // Single-char delimiter: //;\n1;2
-      delimiters = new RegExp(escapeRegExp(delimiterSection));
-    }
-  
 
     const nums = numbers.split(delimiters).map(Number);
     const negatives = nums.filter(num => num < 0);
@@ -44,17 +44,12 @@ function add(numbers){
 
 }
 
-function escapeRegExp(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
 function getCalledCount() {
     return callcount;
 }
 
-function resetCount() {
-  callCount = 0;
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-
-module.exports = { add, getCalledCount, resetCount };
+module.exports = { add, getCalledCount };
