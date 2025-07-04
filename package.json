@@ -1,0 +1,17 @@
+{
+  "name": "tdd-stringcalc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "description": "",
+  "dependencies": {
+    "jest": "^30.0.4"
+  }
+}
