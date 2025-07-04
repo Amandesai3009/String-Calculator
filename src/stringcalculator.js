@@ -26,9 +26,10 @@ function add(numbers){
         throw new Error("Negative numbers not allowed: " + negatives.join(", "));
     }
 
-    // const validNums = nums.filter(num => num <= 1000);
+    const validNums = nums.filter(num => num <= 1000);
+    return validNums.reduce((sum, num) => sum + num, 0);
 
-    return nums.reduce((sum, num) => sum + num, 0);    
+    // return nums.reduce((sum, num) => sum + num, 0);    
 
 }
 
