@@ -39,3 +39,16 @@ test('tracks how many times the func was calles', () => {
 test('ignores numbers greater than 1000', () => {
   expect(add("2,1001")).toBe(2);
 });
+
+
+test('handles custom delimiter of any length: [***]', () => {
+  expect(add("//[***]\n1***2***3")).toBe(6);
+});
+
+test('handles multiple custom delimiters: [*] and [%]', () => {
+  expect(add("//[*][%]\n1*2%3")).toBe(6);
+});
+
+test('handles multiple long delimiters: [**][%%]', () => {
+  expect(add("//[**][%%]\n1**2%%3")).toBe(6);
+});

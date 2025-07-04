@@ -19,6 +19,17 @@ function add(numbers){
         numbers = parts[1];
     }
 
+     if (delimiterSection.startsWith('[')) {
+      // Multiple or long delimiters: //[***][%%]
+      const delimiterMatches = delimiterSection.match(/\[([^\]]+)\]/g);
+      const delimiterList = delimiterMatches.map(d => escapeRegExp(d.slice(1, -1)));
+      delimiters = new RegExp(delimiterList.join('|'));
+    } else {
+      // Single-char delimiter: //;\n1;2
+      delimiters = new RegExp(escapeRegExp(delimiterSection));
+    }
+  
+
     const nums = numbers.split(delimiters).map(Number);
     const negatives = nums.filter(num => num < 0);
 
@@ -33,9 +44,17 @@ function add(numbers){
 
 }
 
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function getCalledCount() {
     return callcount;
 }
 
+function resetCount() {
+  callCount = 0;
+}
 
-module.exports = { add, getCalledCount };
+
+module.exports = { add, getCalledCount, resetCount };
