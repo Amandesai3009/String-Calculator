@@ -27,3 +27,13 @@ test('handle custom delimiterss likee ";"', () => {
 test('throws error for negative numbers', () => {
   expect(() => add("1,-2,3")).toThrow("Negative numbers not allowed: -2");
 });
+
+// test('ignores numbers greater than 1000', () => {
+//   expect(add("2,1001")).toBe(2);
+// });
+
+test('tracks how many times the func was calles', () => {
+  add("1,2");
+  add("3,4");
+  expect(getCalledCount()).toBe(2);
+});
