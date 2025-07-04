@@ -7,6 +7,9 @@ function add(numbers){
 
     //second test case
     if(!numbers.includes(",")) return parseInt(numbers, 10);
+
+    return numbers.split(",").reduce((sum, num) => sum + parseInt(num), 0);
+    
 }
 
 
