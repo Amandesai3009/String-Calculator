@@ -44,4 +44,33 @@ npm test</code></pre>
     <li><code>"1,2,3"</code> → returns 6</li>
     <li><code>"//[***]\n1***2***3"</code> → returns 6</li>
     <li><code>"//[*][%]\n1*2%3"</code> → returns 6</li>
-    <li><code>"
+    <li><code>"2,1001"</code> → returns 2</li>
+    <li><code>"1,-2,3"</code> → throws "Negative numbers not allowed: -2"</li>
+  </ul>
+
+  <h2>🧪 Running Tests</h2>
+  <pre><code>npm test</code></pre>
+  <p>Uses Jest to run all tests in <code>test/stringcalculator.test.js</code>.</p>
+
+  <h2>📁 Project Structure</h2>
+  <pre><code>.
+├── src/
+│   └── stringcalculator.js       # Main calculator logic
+├── test/
+│   └── stringcalculator.test.js  # Test cases using Jest
+├── Documents/
+│   └── String_Calculator_TestCases.pdf
+├── package.json
+├── README.html                   # This file
+</code></pre>
+
+  <h2>📌 Author & Submission Info</h2>
+  <ul>
+    <li><strong>Company:</strong> Incubyte</li>
+    <li><strong>Language:</strong> JavaScript (Node.js)</li>
+    <li><strong>Approach:</strong> TDD (Test-Driven Development)</li>
+  </ul>
+
+  <p>✅ All features implemented & tested as per requirements.</p>
+</body>
+</html>
