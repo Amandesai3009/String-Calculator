@@ -4,19 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>String Calculator - README</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; color: #333; padding: 2rem; max-width: 900px; margin: auto; }
-    h1, h2, h3 { color: #2c3e50; }
-    pre { background: #ecf0f1; padding: 1rem; border-radius: 4px; overflow-x: auto; }
-    code { background: #ecf0f1; padding: 2px 4px; border-radius: 4px; }
-    ul { line-height: 1.6; }
-    .badge { display: inline-block; margin-right: 0.5rem; background: #3498db; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; }
-  </style>
+  
 </head>
 <body>
   <h1>📘 String Calculator (JavaScript)</h1>
   <p>A JavaScript-based string calculator that parses expressions using custom delimiters, inline operator handling, and skips numbers greater than 1000.</p>
-  <p><strong>📄 Read the PDF in the <code>Documents</code> folder</strong> to understand the detailed test case requirements.</p>
+  <p><strong>📄 Read the PDF to understand the detailed test case requirements.</p>
 
   <h2>✨ Features</h2>
   <ul>
