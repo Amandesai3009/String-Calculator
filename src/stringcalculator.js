@@ -9,8 +9,6 @@ function add(numbers){
         return 0;
     }
 
-    // if(!numbers.includes(",")) return parseInt(numbers, 10);
-
     let delimiters = /,|\n/;
 
     if(numbers.startsWith("//")) {
@@ -39,8 +37,6 @@ function add(numbers){
 
     const validNums = nums.filter(num => num <= 1000);
     return validNums.reduce((sum, num) => sum + num, 0);
-
-    // return nums.reduce((sum, num) => sum + num, 0);    
 
 }
 
